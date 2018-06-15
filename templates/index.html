@@ -3,10 +3,13 @@
 	<head><title>Flask with Jinja</title></head>
 	<body>
 		<ul>
-			<li><img src="School.jpg"></li>
-			<li>May Thu Htun</li>
-			<li><a href="http://github.com/MayThuHtun">GitHub</a></li>
-			<li><a href="http://maythuhtun.herokuapp.com">Heroku</a></li>
+			<li><img src="{{ url_for('static', filename='.School.jpg')}}"></li>
+			{# This is comment block. We will set some variables in the jinja template. #}
+			{% set name =" May Thu Htun" %}
+			{% set user_name = "maythuhtun" %}
+			<li>{{ name }}</li>
+			<li><a href="http://github.com/{{ user_name }}">GitHub</a></li>
+			<li><a href="http://{{ user_name }}.herokuapp.com">Heroku</a></li>
 		</ul>
 	</body>
 </html>
